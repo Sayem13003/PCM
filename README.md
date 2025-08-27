@@ -110,7 +110,7 @@ Command-line arguments are as follows:
 7. `{threshold}`: the threshold for the positive pseudo-label. (*default*: `0.3`)
 8. `{partical}`: the percentage of the negative pseudo-label. (*default*: `0.0`)
 
-
+'''
 ## Results:
 
 ## Acknowledgement:
