@@ -9,7 +9,7 @@ Multi-label learning has emerged as a critical task in artificial intelligence (
 framework.
 
 <div align="center">
-<img src="images/PCM.png" title="VLPL" width="80%">
+<img src="img/pcm.png" title="VLPL" width="80%">
 </div>
 
 ## 🛠️ Installation
