@@ -3,8 +3,6 @@ This is the official Pytorch implementation paper "ROBUST MULTI-LABEL LEARNING W
 
 Authors: Faizul Rakib Sayem, Shahana Ibrahim
 
-Corresponding author: Xin Xing (xxing@unomaha.edu)
-
 ### Abstract
 
 Multi-label learning has emerged as a critical task in artificial intelligence (AI) for understanding data across diverse modalities. However, a significant challenge in this domain is the acquisition of accurate labels, which is often both time-consuming and resource-intensive. Assigning multiple labels to each data instance typically requires input from multiple annotators, each bringing their own expertise or mistakes. Recent advancements in foundation models have enabled the use of pseudo-labels to supplement human annotations, but these models are often not primarily designed for multi-label tasks, introducing additional label noise. In this work, we present a novel crowd framework for multi-label learning that integrates hybrid collaboration between human annotators and foundation models. By combining their responses in a robust manner and leveraging insights from modeling and factorization techniques, the proposed framework is accompanied by a regularized end-to-end learning criterion. Experiments using several real-world datasets showcase the promise of our
