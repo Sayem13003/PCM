@@ -1,13 +1,14 @@
-# VLPL: Vision Language Pseudo Label for Multi-label Learning with Single Positive Labels
-This is the official Pytorch implementation paper "VLPL: Vision Language Pseudo Label for Multi-label Learning with Single Positive Labels".
+# ROBUST MULTI-LABEL LEARNING WITH HUMAN-GUIDED AND FOUNDATION MODEL-AIDED CROWD FRAMEWORK
+This is the official Pytorch implementation paper "ROBUST MULTI-LABEL LEARNING WITH HUMAN-GUIDED AND FOUNDATION MODEL-AIDED CROWD FRAMEWORK".
 
-Authors: Xin Xing, Zhexiao Xiong, Abby Stylianou, SrikumarSastry, Liyu Gong, and Nathan Jacobs
+Authors: Faizul Rakib Sayem, Shahana Ibrahim
 
 Corresponding author: Xin Xing (xxing@unomaha.edu)
 
 ### Abstract
 
-We address the task of multi-label image classification, which is essentially single-label image classification without the constraint that there is a single class present in the image. This task is similar to object detection, without the need to localize or count individual objects. Unfortunately, much like object detection, obtaining high-quality multi-label annotations is time-consuming and error-prone. To address this challenge, we consider the single-positive label setting, in which only a single positive class is annotated, even when multiple classes are present in a given image. The current state-of-the-art (SOTA) methods for this setting mainly propose novel loss functions to improve model performance. Several works have attempted to use pseudo-labels, but these approaches haven’t worked well. We propose a novel model called Vision-Language Pseudo-Labeling (VLPL) which uses a vision-language model to suggest strong positive and negative pseudo-labels. We demonstrate the effectiveness of the proposed VLPL model on four popular benchmarks: Pascal VOC, MS-COCO, NUS-WIDE, and CUB-Birds datasets. The results of VLPL outperform several strong baselines and indicate the effectiveness of the proposed approach. Furthermore, we explore the backbone architecture and outperform the SOTA method by 5.4% on Pascal VOC, 15.6% on MS-COCO, 15.2% on NUS-WIDE, and 11.3% on CUB-Birds.
+Multi-label learning has emerged as a critical task in artificial intelligence (AI) for understanding data across diverse modalities. However, a significant challenge in this domain is the acquisition of accurate labels, which is often both time-consuming and resource-intensive. Assigning multiple labels to each data instance typically requires input from multiple annotators, each bringing their own expertise or mistakes. Recent advancements in foundation models have enabled the use of pseudo-labels to supplement human annotations, but these models are often not primarily designed for multi-label tasks, introducing additional label noise. In this work, we present a novel crowd framework for multi-label learning that integrates hybrid collaboration between human annotators and foundation models. By combining their responses in a robust manner and leveraging insights from modeling and factorization techniques, the proposed framework is accompanied by a regularized end-to-end learning criterion. Experiments using several real-world datasets showcase the promise of our
+framework.
 
 <div align="center">
 <img src="images/VLPL.png" title="VLPL" width="80%">
@@ -85,9 +86,6 @@ python preproc/format_pascal.py
 python preproc/format_coco.py
 python preproc/format_cub.py
 ```
-For NUS-WIDE, please download the formatted files [here](https://drive.google.com/drive/folders/1YL7WhnGpd-pjbtPL5r6IKiPeYFVdpYne?usp=sharing) and move them to the corresponding path:
-```
-mv {PATH-TO-DOWNLOAD-FILES}/{DOWNLOAD-FILES} {PATH-TO-THIS-CODE}/data/nuswide
 ```
 `{DOWNLOAD-FILES}` should be replaced by `formatted_train_images.npy`, `formatted_train_labels.npy`, `formatted_val_images.npy`, or `formatted_train_labels.npy`.
 
@@ -97,15 +95,15 @@ In the last step, run `generate_observed_labels.py` to yield single positive ann
 ```
 python preproc/generate_observed_labels.py --dataset {DATASET}
 ```
-`{DATASET}` should be replaced by `pascal`, `coco`, `nuswide`, or `cub`.
+`{DATASET}` should be replaced by `pascal`, `coco`,  or `cub`.
 
 ## 🦍 Training and Evaluation
-Run `main.py` to train and evaluate a model:
+Run `main_clip_multiclip_1s.py` to train and evaluate a model:
 ```
 python main.py -d {DATASET} -l {LOSS} -g {GPU} -m {model} -t {tempurature} -th {threshold}  -p {partical} -s {PYTORCH-SEED}
 ```
 Command-line arguments are as follows:
-1. `{DATASET}`: The adopted dataset. (*default*: `pascal` | *available*: `pascal`, `coco`, `nuswide`, or `cub`)
+1. `{DATASET}`: The adopted dataset. (*default*: `pascal` | *available*: `pascal`, `coco`, `or `cub`)
 2. `{LOSS}`: The method used for training. (*default*: `EM_PL` | *available*: `bce`, `iun`, `an`, `EM`, `EM_APL`, or `EM_PL`)
 3. `{GPU}`: The GPU index. (*default*: `0`)
 4. `{PYTORCH-SEED}`: The seed of PyTorch. (*default*: `0`)
@@ -114,15 +112,11 @@ Command-line arguments are as follows:
 7. `{threshold}`: the threshold for the positive pseudo-label. (*default*: `0.3`)
 8. `{partical}`: the percentage of the negative pseudo-label. (*default*: `0.0`)
 
-For example, to train and evaluate a model on the PASCAL VOC dataset using  EM loss+ VLPL, please run:
-```
-python main.py -d pascal -l EM_PL 
-```
 
 ## Results:
 
 ## Acknowledgement:
-Many thanks to the authors of [single-positive-multi-label](https://github.com/elijahcole/single-positive-multi-label) and [SPML-AckTheUnknown
+Many thanks to the authors of [VLPL]([https://github.com/elijahcole/single-positive-multi-label](https://github.com/mvrl/VLPL)) [single-positive-multi-label](https://github.com/elijahcole/single-positive-multi-label), and [SPML-AckTheUnknown
 ](https://github.com/Correr-Zhou/SPML-AckTheUnknown). Our scripts are highly based on their scripts.
 
 # PCM
