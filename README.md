@@ -9,7 +9,7 @@ Multi-label learning has emerged as a critical task in artificial intelligence (
 framework.
 
 <div align="center">
-<img src="images/VLPL.png" title="VLPL" width="80%">
+<img src="images/PCM.png" title="VLPL" width="80%">
 </div>
 
 ## 🛠️ Installation
@@ -54,16 +54,6 @@ unzip -q coco_val_raw.zip
 rm coco_annotations.zip
 rm coco_train_raw.zip
 rm coco_val_raw.zip
-```
-
-#### NUS-WIDE
-
-1.  Follow the instructions in [this website](https://lms.comp.nus.edu.sg/wp-content/uploads/2019/research/nuswide/NUS-WIDE.html) to download the raw images of NUS-WIDE named `Flickr.zip`.
-2.  Run the following commands:
-```
-mv {PATH-TO-DOWNLOAD-FILES}/Flickr.zip {PATH-TO-THIS-CODE}/data/nuswide
-unzip -q Flickr.zip
-rm Flickr.zip
 ```
 
 #### CUB
@@ -114,7 +104,7 @@ Command-line arguments are as follows:
 ## Results:
 
 ## Acknowledgement:
-Many thanks to the authors of [VLPL]([https://github.com/elijahcole/single-positive-multi-label](https://github.com/mvrl/VLPL)) [single-positive-multi-label](https://github.com/elijahcole/single-positive-multi-label), and [SPML-AckTheUnknown
+Many thanks to the authors of [VLPL](https://github.com/mvrl/VLPL) [single-positive-multi-label](https://github.com/elijahcole/single-positive-multi-label), and [SPML-AckTheUnknown
 ](https://github.com/Correr-Zhou/SPML-AckTheUnknown). Our scripts are highly based on their scripts.
 
 # PCM
