@@ -89,5 +89,4 @@ python preproc/generate_observed_labels.py --dataset {DATASET}
 Run `main_clip_multiclip_1s.py` to train and evaluate a model:
 ```
 python main.py -d {DATASET} -l {LOSS} -g {GPU} -m {model} -t {tempurature} -th {threshold}  -p {partical} -s {PYTORCH-SEED}
-```
 
