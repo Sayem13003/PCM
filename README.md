@@ -90,21 +90,4 @@ Run `main_clip_multiclip_1s.py` to train and evaluate a model:
 ```
 python main.py -d {DATASET} -l {LOSS} -g {GPU} -m {model} -t {tempurature} -th {threshold}  -p {partical} -s {PYTORCH-SEED}
 ```
-Command-line arguments are as follows:
-1. `{DATASET}`: The adopted dataset. (*default*: `pascal` | *available*: `pascal`, `coco`, `or `cub`)
-2. `{LOSS}`: The method used for training. (*default*: `EM_PL` | *available*: `bce`, `iun`, `an`, `EM`, `EM_APL`, or `EM_PL`)
-3. `{GPU}`: The GPU index. (*default*: `0`)
-4. `{PYTORCH-SEED}`: The seed of PyTorch. (*default*: `0`)
-5. `{model}`: The model of backbone. (*default*: `resnet50`| *available*: `resnet50`, `vit_clip`, `convnext_xlarge_22k`, or `convnext_xlarge_1k`)
-6. `{tempurature}`: the temperature scalar of the softmax function.
-7. `{threshold}`: the threshold for the positive pseudo-label. (*default*: `0.3`)
-8. `{partical}`: the percentage of the negative pseudo-label. (*default*: `0.0`)
 
-
-## Results:
-
-## Acknowledgement:
-Many thanks to the authors of [VLPL](https://github.com/mvrl/VLPL) [single-positive-multi-label](https://github.com/elijahcole/single-positive-multi-label), and [SPML-AckTheUnknown
-](https://github.com/Correr-Zhou/SPML-AckTheUnknown). Our scripts are highly based on their scripts.
-
-# PCM
